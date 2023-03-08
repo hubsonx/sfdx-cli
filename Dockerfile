@@ -23,4 +23,4 @@ RUN sfdx --version
 RUN echo y | sfdx plugins:install sfdx-git-delta
 RUN sfdx plugins
 
-RUN npm install shelljs --global
+RUN export NODE_PATH=`npm root -g` | npm install -g shelljs
