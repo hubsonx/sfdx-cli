@@ -22,3 +22,5 @@ RUN sfdx --version
 # install SFDX-Git-Delta plugin - https://github.com/scolladon/sfdx-git-delta
 RUN echo y | sfdx plugins:install sfdx-git-delta
 RUN sfdx plugins
+
+RUN npm install shelljs --global
