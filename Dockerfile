@@ -17,10 +17,6 @@ RUN apk add --update --no-cache  \
 
 # install Salesforce CLI from npm
 RUN npm install sfdx-cli --global
-RUN sfdx --version
 
 # install SFDX-Git-Delta plugin - https://github.com/scolladon/sfdx-git-delta
 RUN echo y | sfdx plugins:install sfdx-git-delta
-RUN sfdx plugins
-
-RUN export NODE_PATH=`npm root -g` | npm install -g shelljs
