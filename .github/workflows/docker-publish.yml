@@ -14,6 +14,8 @@ on:
     types: [published]
   push:
     branches: [ "master" ]
+    tags:
+      - 'v*'
 
 jobs:
   push_to_registry:
@@ -40,7 +42,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: |
-            ${{ steps.meta.outputs.tags }}
-            type=raw,value=latest,enable=${{ github.ref == format('refs/heads/{0}', 'master') }}
+          tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
