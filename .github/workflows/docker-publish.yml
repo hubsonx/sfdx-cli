@@ -15,7 +15,9 @@ on:
   push:
     branches: [ "master" ]
     tags:
-      - 'v*'
+      - 'v2'
+      - 'latest'
+      - 'master'
 
 jobs:
   push_to_registry:
