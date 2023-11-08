@@ -19,8 +19,8 @@ RUN apk add --update --no-cache  \
 ENV PATH="/node_modules/.bin:${PATH}"
 
 # Install npm packages +install sfdx plugins & display versions
-RUN npm install --no-cache sfdx-cli -g && \
-    echo 'y' | sfdx plugins:install sfdx-git-delta && \
-    sfdx --version && \
-    sfdx plugins && \
+RUN npm install --no-cache @salesforce/cli -g && \
+    echo 'y' | sf plugins:install sfdx-git-delta && \
+    sf --version && \
+    sf plugins && \
     rm -rf /root/.npm/_cacache
