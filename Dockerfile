@@ -24,3 +24,4 @@ RUN npm install --no-cache @salesforce/cli -g && \
     sf --version && \
     sf plugins && \
     rm -rf /root/.npm/_cacache
+
